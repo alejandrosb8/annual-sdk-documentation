@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { COLORS, DEVICE } from '../utils/constants';
 
@@ -45,21 +45,25 @@ const StyledAnchor = styled.a`
   }
 `;
 
-const idArray = [];
-
-const titlesArray = Array.from(document.getElementsByTagName('h2'));
-titlesArray.forEach((element, index) => {
-  const newId = `title-id-${index}`;
-  element.id = newId;
-  idArray.push(newId);
-});
-
 export const NavMenu = (props) => {
+  const [ids, setIds] = useState([]);
+
+  useEffect(() => {
+    const idArray = [];
+    const titlesArray = Array.from(document.getElementsByTagName('h2'));
+    titlesArray.forEach((element, index) => {
+      const newId = `title-id-${index}`;
+      element.id = newId;
+      idArray.push(newId);
+    });
+    setIds(idArray);
+  }, []);
+
   return (
     <MainLayout size={props.size} active={props.active}>
       <StyledNav>
         <StyledUl>
-          {idArray.map((x) => {
+          {ids.map((x) => {
             return (
               <StyledLi>
                 <StyledAnchor href={`#${x}`}>{document.getElementById(x).textContent}</StyledAnchor>
