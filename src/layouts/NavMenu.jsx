@@ -32,6 +32,12 @@ const StyledUl = styled.ul`
   overflow-x: hidden;
 `;
 
+const StyledSubUl = styled.ul`
+  list-style: none;
+  margin-left: 10px;
+  margin-bottom: 20px;
+`;
+
 const StyledLi = styled.li`
   margin-top: 10px;
   width: 100%;
@@ -55,23 +61,42 @@ export const NavMenu = (props) => {
 
   useEffect(() => {
     const idArray = [];
-    const titlesArray = Array.from(document.getElementsByTagName('h2'));
+    const titlesArray = Array.from(document.getElementsByTagName('section'));
     titlesArray.forEach((element, index) => {
       const newId = `title-id-${index}`;
       element.id = newId;
       idArray.push(newId);
     });
+    const subTitles = Array.from(document.querySelectorAll(`h3`));
+    subTitles.forEach((subtitle, newIndex) => {
+      const newSubId = `subtitle-id-${newIndex}`;
+      subtitle.id = newSubId;
+    });
     setIds(idArray);
   }, []);
+
+  //No juzguen el codigo de abajo, despues lo hago más bonito XD
 
   return (
     <MainLayout size={props.size} active={props.active}>
       <StyledNav>
         <StyledUl>
           {ids.map((x) => {
+            const subTitles = Array.from(document.querySelectorAll(`#${x} > div > h3`));
             return (
-              <StyledLi>
-                <StyledAnchor href={`#${x}`}>{document.getElementById(x).textContent}</StyledAnchor>
+              <StyledLi key={x}>
+                <StyledAnchor href={`#${x}`}>{Array.from(document.querySelectorAll(`#${x} > h2`))[0].textContent}</StyledAnchor>
+                {subTitles.length > 0 && (
+                  <StyledSubUl>
+                    {subTitles.map((y, index) => {
+                      return (
+                        <StyledLi key={index}>
+                          <StyledAnchor href={`#${y.id}`}>{y.textContent}</StyledAnchor>
+                        </StyledLi>
+                      );
+                    })}
+                  </StyledSubUl>
+                )}
               </StyledLi>
             );
           })}

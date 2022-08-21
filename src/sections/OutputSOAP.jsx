@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledSection, SectionTitle, SectionP, SectionSubTitle, SectionCode } from '../components/SectionComponents';
+import { StyledSection, SectionTitle, SectionP, SectionCode } from '../components/SectionComponents';
 
 export const OutputSOAP = () => {
   return (

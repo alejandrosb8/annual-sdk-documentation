@@ -15,13 +15,6 @@ export const SectionTitle = styled.h2`
   color: ${COLORS.secondary};
 `;
 
-export const SectionSubTitle = styled.h3`
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: ${COLORS.secondary};
-  margin-top: 40px;
-`;
-
 export const SectionP = styled.p`
   font-size: 1.6rem;
   font-weight: 500;
