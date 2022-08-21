@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { COLORS, DEVICE } from '../utils/constants';
 
+const fixedHeight = '200px';
+
 const MainLayout = styled.div`
   position: fixed;
-  height: 100%;
+  height: calc(100% + ${fixedHeight});
   width: ${(props) => props.size};
   background-color: ${COLORS['nav-bg']};
   z-index: 10;
@@ -21,11 +23,13 @@ const StyledNav = styled.nav`
   width: 100%;
   height: 100%;
   margin-top: 60px;
+  margin-bottom: ${fixedHeight};
 `;
 const StyledUl = styled.ul`
   list-style: none;
   overflow-y: auto;
   padding: 20px;
+  overflow-x: hidden;
 `;
 
 const StyledLi = styled.li`
@@ -39,6 +43,7 @@ const StyledAnchor = styled.a`
   color: ${COLORS.secondary};
   text-decoration: none;
   cursor: pointer;
+  word-break: normal;
 
   &:hover {
     color: ${COLORS.accent};

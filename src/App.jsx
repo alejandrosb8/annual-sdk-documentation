@@ -11,7 +11,7 @@ const StyledContent = styled.div`
   position: relative;
 `;
 
-const navSize = '220px';
+const navSize = '260px';
 
 function App() {
   const [navActive, setNavActive] = useState(false);

@@ -39,6 +39,7 @@ export const SectionCode = styled.pre`
   line-height: 2.2rem;
   overflow-x: auto;
   color: black;
+  border-radius: 6px;
 `;
 
 export const SectionUl = styled.ul`

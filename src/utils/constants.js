@@ -1,7 +1,7 @@
 const COLORS = {
   primary: '#fffffc',
   secondary: '#393732',
-  accent: '#918ee9',
+  accent: '#6e6ae6',
   'menu-button-hover': '#222222',
   'nav-bg': '#e9e9e9',
 };
