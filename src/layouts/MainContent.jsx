@@ -4,6 +4,7 @@ import { ColorText } from '../components/StyledText';
 import { Installation } from '../sections/Installation';
 import { OutputSOAP } from '../sections/OutputSOAP';
 import { StatusCode } from '../sections/StatusCode';
+import { ServicesSection } from '../sections/ServicesSection';
 import { DEVICE, COLORS } from '../utils/constants';
 
 const StyledMain = styled.main`
@@ -30,6 +31,7 @@ export const MainContent = (props) => {
       <Installation />
       <OutputSOAP />
       <StatusCode />
+      <ServicesSection />
     </StyledMain>
   );
 };

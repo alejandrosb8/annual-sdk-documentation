@@ -52,8 +52,12 @@ Advertencia, para construir las seccion se utilizan etiquetas HTML personalizada
 
 - `StyledSection`: Es el contenedor de la sección, obligatoria.
 - `SectionTitle`: Es el titulo principal de la sección, obligatoria.
-- `SectionSubTitle`: Es el un subtitulo.
 - `SectionP`: Es un parrafo.
 - `SectionCode`: Es un bloque de codigo.
 - `SectionUl`: Es un contenedor de lista.
 - `SectionLi`: Es un elemento de lista, necesita colocarse dentro de un SectionUl.
+
+Tambien se pueden agregar sub-secciones, las etiquetas son:
+
+- `StyledSubSection`: Es el contenedor de la sub-sección, obligatoria.
+- `SectionSubTitle`: Es el titulo de la sub-sección, obligatoria.

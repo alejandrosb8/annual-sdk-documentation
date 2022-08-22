@@ -34,7 +34,7 @@ const StyledUl = styled.ul`
 
 const StyledSubUl = styled.ul`
   list-style: none;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-bottom: 20px;
 `;
 

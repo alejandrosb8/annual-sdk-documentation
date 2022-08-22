@@ -1,11 +1,11 @@
-import { SectionSubTitle } from '../../../components/SubSectionComponents';
+import { SectionSubTitle, StyledSubSection } from '../../../components/SubSectionComponents';
 import { SectionCode } from '../../../components/SectionComponents';
 
 import React from 'react';
 
 export const JavascriptSubSection = () => {
   return (
-    <div>
+    <StyledSubSection>
       <SectionSubTitle>{'JavaScript (con Node js)'}</SectionSubTitle>
       <SectionCode>
         {`
@@ -27,6 +27,6 @@ export const JavascriptSubSection = () => {
         export { getToken };
       `}
       </SectionCode>
-    </div>
+    </StyledSubSection>
   );
 };
